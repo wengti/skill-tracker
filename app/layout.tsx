@@ -16,17 +16,9 @@ export default function RootLayout({ children, }: Readonly<{ children: React.Rea
 
 
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang="en" suppressHydrationWarning className={geist.className}>
             <ThemeContextProvider>
-                <div
-                    className={`
-                        ${geist.className} 
-                        text-letter-black dark:text-letter-white
-                        bg-background-white dark:bg-background-black
-                    `}
-                >
                     {children}
-                </div>
             </ThemeContextProvider>
         </html>
     );

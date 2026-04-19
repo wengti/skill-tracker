@@ -26,6 +26,7 @@ export default function ThemeSwitch(){
     return (
         <button
             onClick={()=> handleSetTheme()}
+            className='text-2xl'
         >
             {
                 theme === 'light' ?

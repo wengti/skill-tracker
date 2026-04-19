@@ -24,7 +24,11 @@ export default function ThemeContextProvider({ children }: { children: React.Rea
     if (isMounted.current) {
         return (
             <ThemeContext value={[theme, setTheme]}>
-                <body className={theme}>
+                <body className={`
+                    ${theme} min-h-screen px-2 py-4
+                    text-letter-black dark:text-letter-white
+                    bg-background-white dark:bg-background-black
+                `}>
                     {children}
                 </body>
             </ThemeContext>

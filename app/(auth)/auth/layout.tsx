@@ -1,10 +1,14 @@
+import AuthHeader from "@/components/headers/AuthHeader";
 import React from "react";
 
-export default function AuthLayout({children}: {children: React.ReactNode}){
+export default function AuthLayout({ children }: { children: React.ReactNode }) {
 
     return (
-        <main>
-            {children}
-        </main>
+        <>
+            <AuthHeader />
+            <main className='flex flex-col'>
+                {children}
+            </main>
+        </>
     )
 }
