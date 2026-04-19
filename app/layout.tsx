@@ -1,3 +1,4 @@
+import ThemeContextProvider from '@/context/ThemeContextProvider';
 import './globals.css'
 import type { Metadata } from 'next'
 import { Geist } from 'next/font/google'
@@ -12,13 +13,21 @@ const geist = Geist({
 })
 
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode }>) {
+
+
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className=''> {/* Change this classname to dark to trigger darkmode */}
-                <div className={`${geist.className} bg-background-gray`}>
+            <ThemeContextProvider>
+                <div
+                    className={`
+                        ${geist.className} 
+                        text-letter-black dark:text-letter-white
+                        bg-background-white dark:bg-background-black
+                    `}
+                >
                     {children}
                 </div>
-            </body>
+            </ThemeContextProvider>
         </html>
     );
 }

@@ -8,8 +8,18 @@
   --font-sans: "DM Sans", sans-serif;
 
   /* Custom */
-  --color-background-muted: #fafaf8;
+  /* Light Mode */
+  --color-background-white: #fafaf8;
   --color-card-white: whitesmoke;
+  --color-letter-black: black;
+
+  /* Dark Mode */
+  --color-background-black: #121212;
+  --color-card-black: #1e1e1e;
+  --color-letter-white: white;
+  
+
+  /* Common */
   --color-icon-green: #279668;
 
   /* Primary */
