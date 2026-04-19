@@ -14,8 +14,10 @@ const geist = Geist({
 export default function RootLayout({ children, }: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={geist.className}>
-                {children}
+            <body className=''> {/* Change this classname to dark to trigger darkmode */}
+                <div className={`${geist.className} bg-background-gray`}>
+                    {children}
+                </div>
             </body>
         </html>
     );
