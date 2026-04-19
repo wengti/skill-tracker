@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
 @import "tailwindcss";
-@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/forms' {
+  strategy: 'class';
+}
 
 
 @theme {
@@ -498,7 +500,12 @@
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
+
+  input {
+    background-color: transparent;
+  }
 }
+
 
 @keyframes pulse {
   0%,
@@ -511,3 +518,31 @@
 }
 
 
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px var(--color-card-white) inset !important;
+    box-shadow: 0 0 0 1000px var(--color-card-white) inset !important;
+    -webkit-text-fill-color: var(--color-letter-black) !important;
+    border-color: inherit !important;
+}
+
+.dark input:-webkit-autofill,
+.dark input:-webkit-autofill:hover,
+.dark input:-webkit-autofill:focus,
+.dark input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px var(--color-card-black) inset !important;
+    box-shadow: 0 0 0 1000px var(--color-card-black) inset !important;
+    -webkit-text-fill-color: var(--color-letter-white) !important;
+    border-color: inherit !important;
+}
+
+input:focus-visible {
+    box-shadow: none !important;
+}
+
+.dark input:focus-visible {
+    box-shadow: none !important;
+}
