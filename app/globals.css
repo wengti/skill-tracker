@@ -524,9 +524,7 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 1000px var(--color-card-white) inset !important;
-    box-shadow: 0 0 0 1000px var(--color-card-white) inset !important;
     -webkit-text-fill-color: var(--color-letter-black) !important;
-    border-color: inherit !important;
 }
 
 .dark input:-webkit-autofill,
@@ -534,9 +532,7 @@ input:-webkit-autofill:active {
 .dark input:-webkit-autofill:focus,
 .dark input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 1000px var(--color-card-black) inset !important;
-    box-shadow: 0 0 0 1000px var(--color-card-black) inset !important;
     -webkit-text-fill-color: var(--color-letter-white) !important;
-    border-color: inherit !important;
 }
 
 input:focus-visible {
