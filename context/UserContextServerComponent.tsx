@@ -18,8 +18,6 @@ export default async function UserContextServerProvider({ children }: { children
             .from('users')
             .select(`id, name, email, picture`)
         
-        console.log(data)
-        console.log(error)
         
         if (error) throw new Error(error.message)
         else if (data === null || data.length === 0) throw new Error("Cannot retrieve the current user's profile data.")

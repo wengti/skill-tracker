@@ -23,7 +23,7 @@
   /* Common */
   --color-icon-green: #279668;
   --color-hover-green: #77DFB4;
-  --color-letter-mute: #c8c2be;
+  --color-letter-mute: #6d6e6a;
 
   /* Primary */
   --color-primary-50: #eff3ff;
@@ -551,6 +551,8 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 1000px var(--color-card-white) inset !important;
     -webkit-text-fill-color: var(--color-letter-black) !important;
+    outline: none !important;
+    border: none !important;
 }
 
 .dark input:-webkit-autofill,
@@ -559,6 +561,8 @@ input:-webkit-autofill:active {
 .dark input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 1000px var(--color-card-black) inset !important;
     -webkit-text-fill-color: var(--color-letter-white) !important;
+    outline: none !important;
+    border: none !important;
 }
 
 input:focus-visible {

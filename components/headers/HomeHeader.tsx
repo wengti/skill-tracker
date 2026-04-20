@@ -17,6 +17,7 @@ export default function HomeHeader() {
         <header className='h-(--header-y) flex justify-between items-center bg-card-white dark:bg-card-black p-(--content-space-x)'>
             <Link href='/' className='h-full'>
                 <Image
+                    priority
                     src='/icons/skilltrack-logo.png'
                     height={730}
                     width={240}
@@ -24,6 +25,7 @@ export default function HomeHeader() {
                     className='dark:hidden w-38'
                 />
                 <Image
+                    priority
                     src='/icons/skilltrack-logo-dark.png'
                     height={730}
                     width={240}

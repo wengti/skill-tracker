@@ -9,7 +9,7 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
         <UserContextServerProvider>
             <HomeHeader />
             <main className='flex flex-col min-h-(--content-min-y) px-(--content-space-x) py-(--content-space-y)'>
-                <div className="grow flex flex-col w-full">
+                <div className="grow flex flex-col w-full gap-8">
                     {children}
                 </div>
             </main>

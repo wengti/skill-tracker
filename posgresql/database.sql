@@ -2,7 +2,6 @@
 /* Table - users */
 /* ------------- */
 
-
 /* Sync authentication table with user table */
 create or replace function public.handle_new_users()
 returns trigger
@@ -23,9 +22,39 @@ after insert on auth.users
 for each row
 execute function public.handle_new_users();
 
-/* Policy */
+/* ----  Policy  ---- */
 /* Read */
 alter policy "Only authenticated user can read their own data"
 on "public"."users"
 to authenticated
 using (auth.uid = id)
+
+
+/* ------------- */
+/* Table - skills */
+/* ------------- */
+
+/* ----  Policy  ---- */
+/* Read */
+alter policy "Only authenticated can read their own entry"
+on "public"."skills"
+to authenticated
+using (auth.uid() = user_id)
+
+/* Insert */
+alter policy "only authenticated user can add for themselves"
+on "public"."skills"
+to authenticated
+with check (auth.uid() = user_id)
+
+/* Constraint */
+-- ALTER TABLE public.skills
+--   DROP CONSTRAINT skill_max_length,
+--   DROP CONSTRAINT weekly_target_range,
+--   DROP CONSTRAINT user_skill_unique
+
+ALTER TABLE public.skills
+ADD CONSTRAINT skill_max_length CHECK (char_length(skill) <= 20),
+ADD CONSTRAINT weekly_target_range CHECK (weekly_target > 0 AND weekly_target <= 10080),
+ADD CONSTRAINT user_skill_unique UNIQUE (user_id, skill);
+
