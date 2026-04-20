@@ -47,7 +47,7 @@ export function SignUpForm({
                 options: {
                     data: {
                         name: name,
-                        img: ''
+                        picture: ''
                     },
                     emailRedirectTo: `${window.location.origin}/protected`,
                 },
