@@ -1,6 +1,7 @@
 import Footer from "@/components/footers/Footer";
 import AuthHeader from "@/components/headers/AuthHeader";
 import AuthLogo from "@/components/logos/AuthLogo";
+import UserContextServerProvider from "@/context/UserContextServerComponent";
 import React from "react";
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {

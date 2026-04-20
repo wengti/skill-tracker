@@ -3,6 +3,7 @@ import ThemeSwitch from "../theme-button/ThemeSwitch";
 import Link from "next/link";
 
 export default function AuthHeader() {
+
     return (
         <header className='h-(--header-y) flex justify-between items-center pr-4 bg-card-white dark:bg-card-black p-(--content-space-x)'>
             <Link href='/'>
@@ -17,4 +18,4 @@ export default function AuthHeader() {
             <ThemeSwitch />
         </header>
     )
-}
+}       

@@ -3,6 +3,7 @@
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/supabase-ui/button";
 import { useRouter } from "next/navigation";
+import { FaDoorOpen } from "react-icons/fa";
 
 export function LogoutButton() {
 
@@ -16,8 +17,8 @@ export function LogoutButton() {
     };
 
     return (
-        <Button onClick={logout} className='bg-icon-green text-letter-white'>
-            Logout
-        </Button>
+        <button onClick={logout} className='text-letter-black dark:text-letter-white text-2xl hover:text-hover-green active:text-hover-green'>
+            <FaDoorOpen />
+        </button>
     )
 }
