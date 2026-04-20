@@ -2,8 +2,8 @@ import { cn } from "@/utils/cn";
 import { Xmark2x } from "@tailgrids/icons";
 import React, { useContext, useState } from "react";
 import { type Key } from "react-aria-components";
-import { Badge } from "../badge";
 import { Combobox, type ComboboxProps, MultiComboboxContext } from "./combobox";
+import { Badge } from "./badge";
 
 // MultiCombobox (Root)
 
