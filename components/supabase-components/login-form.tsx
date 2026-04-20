@@ -18,13 +18,17 @@ import { useState } from "react";
 import FbBtn from "../oauth-components/FbBtn";
 import GoogleBtn from "../oauth-components/GoogleBtn";
 
+export type AuthErrorType = string | null
+
 export function LoginForm({
     className,
     ...props
 }: React.ComponentPropsWithoutRef<"div">) {
+
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState<string | null>(null);
+    const [error, setError] = useState<AuthErrorType>(null);
     const [isLoading, setIsLoading] = useState(false);
     const router = useRouter();
 
@@ -74,6 +78,7 @@ export function LoginForm({
                                     required
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
+                                    disabled={isLoading}
                                 />
                             </div>
                             <div className="grid gap-2">
@@ -92,10 +97,14 @@ export function LoginForm({
                                     required
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
+                                    disabled={isLoading}
                                 />
                             </div>
-                            {error && <p className="text-sm text-red-500">{error}</p>}
-                            <Button type="submit" className="w-full interactive-btn" disabled={isLoading}>
+                            {
+                                error &&
+                                <p className="text-sm text-red-500">{error}</p>
+                            }
+                            <Button type="submit" className={`w-full interactive-btn disabled:opacity-50`} disabled={isLoading}>
                                 {isLoading ? "Logging in..." : "Login"}
                             </Button>
                         </div>
@@ -115,10 +124,10 @@ export function LoginForm({
                         </div>
                         <div className='mt-2 flex gap-2'>
                             <div className='w-1/2'>
-                                <FbBtn />
+                                <FbBtn isLoading={isLoading} setIsLoading={setIsLoading} error={error} setError={setError} />
                             </div>
                             <div className='w-1/2'>
-                                <GoogleBtn />
+                                <GoogleBtn isLoading={isLoading} setIsLoading={setIsLoading} error={error} setError={setError} />
                             </div>
                         </div>
 
