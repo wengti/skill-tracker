@@ -5,7 +5,6 @@
   strategy: 'class';
 }
 
-
 @theme {
   --font-sans: "DM Sans", sans-serif;
 
@@ -16,13 +15,15 @@
   --color-letter-black: black;
 
   /* Dark Mode */
-  --color-background-black: #121212;
+  --color-background-black: #1A1919;
   --color-card-black: #1e1e1e;
   --color-letter-white: white;
   
 
   /* Common */
   --color-icon-green: #279668;
+  --color-hover-green: #77DFB4;
+  --color-letter-mute: #c8c2be;
 
   /* Primary */
   --color-primary-50: #eff3ff;
@@ -516,6 +517,30 @@
     opacity: 0.7;
   }
 }
+
+:root {
+    --content-space-x: 8px;
+    --content-space-y: 0px;
+    --header-y: 60px;
+    --footer-y: 50px;
+}
+
+
+/* Class for interactive button */
+.interactive-btn {
+    background-color: var(--color-icon-green);
+    color: var(--color-letter-white);
+}
+
+.interactive-btn:hover{
+    background-color: var(--color-hover-green);
+}
+
+.interactive-btn:hover{
+    color: var(--color-letter-black)
+}
+/* End of class for interactive button */
+
 
 
 
