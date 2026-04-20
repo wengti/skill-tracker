@@ -15,24 +15,21 @@ type AuthBtnPropsType = {
 export default function GoogleBtn({ isLoading, setIsLoading, error, setError }: AuthBtnPropsType) {
 
     const btnClass = clsx({
-        'w-full flex gap-2 items-center justify-center bg-white py-1 rounded-lg font-semibold text-letter-black disabled:opacity-50': true,
+        'w-full flex gap-2 items-center justify-center bg-[#1877F2] py-1 rounded-lg font-semibold text-letter-white disabled:opacity-50': true,
     })
 
     async function handleLogin() {
-
-
         try {
             setIsLoading(true)
             const supabase = createClient()
 
             const { data, error } = await supabase.auth.signInWithOAuth({
-                provider: 'google',
+                provider: 'facebook',
                 options: {
                     redirectTo: `${process.env.NEXT_PUBLIC_WEBSITE_URL}/auth/callback` /* add ?next=/protected to redirect to somewhere else i.e. /protected */
                 }
             })
             if (error) throw new Error(error.message)
-            console.log('This part got run')
             setError(null)
 
         }

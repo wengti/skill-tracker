@@ -15,7 +15,7 @@ type AuthBtnPropsType = {
 export default function GoogleBtn({ isLoading, setIsLoading, error, setError }: AuthBtnPropsType) {
 
     const btnClass = clsx({
-        'w-full flex gap-2 items-center justify-center bg-white py-1 rounded-lg font-semibold text-letter-black disabled:opacity-50': true,
+        'w-full flex gap-2 items-center justify-center bg-white py-1 rounded-lg font-semibold text-letter-black disabled:opacity-50 border-1 border-letter-black': true,
     })
 
 
