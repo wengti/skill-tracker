@@ -520,7 +520,7 @@
 
 :root {
     --content-space-x: 16px;
-    --content-space-y: 16px;
+    --content-space-y: 32px;
     --header-y: 60px;
     --footer-y: 50px;
     --content-min-y: calc(100vh - var(--header-y) - var(--footer-y));
