@@ -15,6 +15,8 @@ import { Label } from "@/components/supabase-ui/label";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import FbBtn from "../oauth-components/FbBtn";
+import GoogleBtn from "../oauth-components/GoogleBtn";
 
 export function LoginForm({
     className,
@@ -97,6 +99,7 @@ export function LoginForm({
                                 {isLoading ? "Logging in..." : "Login"}
                             </Button>
                         </div>
+
                         <div className="mt-4 text-center text-sm">
                             Don&apos;t have an account?{" "}
                             <Link
@@ -106,6 +109,19 @@ export function LoginForm({
                                 Sign up
                             </Link>
                         </div>
+
+                        <div className='mt-4 text-sm text-center'>
+                            <p>or continue with</p>
+                        </div>
+                        <div className='mt-2 flex gap-2'>
+                            <div className='w-1/2'>
+                                <FbBtn />
+                            </div>
+                            <div className='w-1/2'>
+                                <GoogleBtn />
+                            </div>
+                        </div>
+
                     </form>
                 </CardContent>
             </Card>
