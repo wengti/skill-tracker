@@ -1,10 +1,11 @@
-import AuthLogo from "@/components/logos/AuthLogo";
+'use client'
 import { LoginForm } from "@/components/supabase-components/login-form";
+import { usePathname } from "next/navigation";
 
 export default function Page() {
-    /*  */
-    return (
+    const pathname = usePathname()
 
-        <LoginForm />
+    return (
+        <LoginForm key={pathname}/>
     );
 }
